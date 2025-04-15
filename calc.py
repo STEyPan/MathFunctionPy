@@ -10,7 +10,7 @@ def calculate(example: str) -> (int, float):
             first = int(temp)
             temp = ""
         else:
-            temp += chargit 
+            temp += char
     second = int(temp)
 
     match sign:
@@ -20,8 +20,43 @@ def calculate(example: str) -> (int, float):
         case "/": return first / second
         case "^": return first ** second
 
-def main():
+def evalExample():
     example = input("Введите математическое выражение: ")
     print(f"{example}={calculate(example)}")
 
-main()
+def fibonacci_recursive(number):
+    if number <= 1:
+        return number
+    return fibonacci_recursive(number-1) + fibonacci_recursive(number - 2)
+
+def fibonacci_cycle(number):
+    fib = 0
+
+    if number <= 1:
+        return number
+    elif number == 2:
+        return 1
+
+    for i in range(2, number+1):
+        fib += i
+
+    return fib
+
+
+def choiceEvalFib():
+    number = int(input("Введите, какое число Фибоначчи Вы хотите найти: "))
+    print(f"1) Рекурсивно\n2) Циклом")
+    choice = input("Выберете способ нахождения числа Фибоначчи: ")
+
+
+    match choice:
+        case "1": print(f"{number} число Фибоначчи - {fibonacci_recursive(number)}")
+        case "2": print(f"{number} число Фибоначчи - {fibonacci_cycle(number)}")
+        case _: print("нет такой команды")
+
+
+
+
+
+
+# evalExample()
