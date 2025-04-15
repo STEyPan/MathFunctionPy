@@ -30,7 +30,7 @@ def fibonacci_recursive(number):
     return fibonacci_recursive(number-1) + fibonacci_recursive(number - 2)
 
 def fibonacci_cycle(number):
-    fib = 0
+    fib = 1
 
     if number <= 1:
         return number
