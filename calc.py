@@ -30,18 +30,16 @@ def fibonacci_recursive(number):
     return fibonacci_recursive(number-1) + fibonacci_recursive(number - 2)
 
 def fibonacci_cycle(number):
-    fib = 1
+    fib = 0
+    num_first = 0
+    num_second = 1
 
-    if number <= 1:
-        return number
-    elif number == 2:
-        return 1
-
-    for i in range(2, number+1):
-        fib += i
+    for _ in range(1, number):
+        fib = num_first + num_second
+        num_second = num_first
+        num_first = fib
 
     return fib
-
 
 def choiceEvalFib():
     number = int(input("Введите, какое число Фибоначчи Вы хотите найти: "))
